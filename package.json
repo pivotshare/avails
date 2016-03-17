@@ -20,11 +20,12 @@
   "author": "Hector G. Parra <hector@hectorparra.com>",
   "license": "MIT",
   "dependencies": {
+    "JSONStream": "^1.1.1",
     "commander": "^2.9.0",
     "decamelize": "^1.2.0",
     "split": "^1.0.0"
   },
   "devDependencies": {
-    "tap": "^5.7.0"
+    "tape": "^4.5.1"
   }
 }
