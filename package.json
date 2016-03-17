@@ -1,0 +1,30 @@
+{
+  "name": "avails",
+  "version": "0.1.0",
+  "description": "Tool for parsing and generating EMA Avails",
+  "main": "./lib/avails.js",
+  "bin": {
+    "avails": "./bin/avails.js"
+  },
+  "scripts": {
+    "test": "tape test/js/*.js"
+  },
+  "keywords": [
+    "ema",
+    "avail",
+    "avails",
+    "metadata",
+    "movie",
+    "tv"
+  ],
+  "author": "Hector G. Parra <hector@hectorparra.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "decamelize": "^1.2.0",
+    "split": "^1.0.0"
+  },
+  "devDependencies": {
+    "tap": "^5.7.0"
+  }
+}
