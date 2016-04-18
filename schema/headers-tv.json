@@ -42,7 +42,7 @@
   "release_year",
   "release_history_original",
   "release_history_physical_hv",
-  "exceptions_flag",
+  "exception_flag",
   "rating_system",
   "rating_value",
   "rating_reason",
