@@ -11,6 +11,7 @@ var JSONStream = require('JSONStream')
 
 program
   .version(packageJson.version)
+  .description(packageJson.description)
   .usage('[options] <infile')
   .option('-i, --input [type]', 'Add the specified type of input [tsv|json] (required)')
   .option('-o, --output [type]', 'Add the specified type of output [tsv|json|js|xlsx] (required)')
