@@ -1,9 +1,43 @@
+#
+# Pivotshare's Travis CI for npm
+#
+# Prerequites:
+# - travis CLI: `gem install travis`
+# - enable repository on Travis: `travis enable`
+#
+# Notes:
+# - remember to always run `travis` from within your repository
+#
+
 language: node_js
 
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs
 node_js:
-  - "5"
-  - "5.1"
   - "4"
-  - "4.2"
-  - "4.1"
-  - "4.0"
+
+#
+# Uncomment if this module requires native compilation, e.g. for XML libs
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-(or-io.js-v3)-compiler-requirements
+##
+# addons:
+#   apt:
+#     sources:
+#       - ubuntu-toolchain-r-test
+#     packages:
+#       - g++-4.8
+
+# https://docs.travis-ci.com/user/notifications/
+notifications:
+  email: false
+  slack:
+    # See https://pivotshare.slack.com/services/B151FD1PY#service_setup
+    secure: "XNBsoKJDE42n6fd8HO2ccXtvd8w2O6esVkF4AB/kNPtiEeuxE/EJsN3SmtgRLfmHPYqnV+1h1pFca3ulL7pfeEyzTVSNuEOyoS+2rbb16CcqJFHR7KiKkLM1FQmYmo2w/zD/e94JxZKGtUAzW2me4lsA0owZSXqROO1v1T6OfJpdiSvnncp/GrcPCuO/vG92EL3pz9ZYEB+EoKSUnRueSXMj5BRoIs+WdIJ2UbxjrCp6BQ2d/jAJY3+V84QXmJyvdIxDS2ofIdYw/pcKlvRZM9K7quufdOIM5AEUZZWlSCLMQE9oZgSI11UHGcj+bK7YmXwC8RczXGPqr6hrPxRcmHLJi57cSBgrKKkuQun9LK1yw3OnsAgLwdQhlU6fJza7LwWnTrafdBmDlcrpRPVv/Nz3w0pGHQky24rlBIeFWVTe59nyfYGaNjbN9jTA/AzTk3fi5TXeKGFiQySOprG2YbT2DgeIFpOyFP3Auj5W5rg9mZ7tjTA09gVSj9fN1ZmGg9pttr/4lGJSSNtyhRFh747s0sOX5NjB7Ou98Nw0u9fo+vNjTvoudmc+BmDX0oQKey4SvITdMoCVq7XTa6KWAVhSdFmLHBnoeLMrtDQgICsFEvJ4V6FL/nUhZrAnrjHQdJ/OwpByGbfZaeo0EVRwJRaUIF/wtrTyraZHoQcTufM="
+
+# https://docs.travis-ci.com/user/deployment/
+deploy:
+  provider: npm
+  email:    engineering@pivotshare.com
+  api_key:
+    secure: "mgSAwkAGql9SsTGtNWYZGeQAnnbC8dNIaXUdXnw89WPHaRcVaBKwqhIqEjYIUWe/W7OGWYYhsvi1NCbQD9myCV9VoH9Fo+yMkODhj+Pj7ZDvpjRDko4Am4Lo4d11Z0ujkAUGb0dL5L0BurmRy6yCR8QDMXA6SlfbjJZKp5YGOMX3SfhhcY7Dc1rcz3ntSZ3WHlWU24UhNyq96TZ6Fkvja3ZpUK/ZDig5YbBYgjlCt3hMgy7yCsvZq+8kKBOHb+veedZ3KAQ8HIASTpYzFrTOp1xrsZOWFgf/1EodihHjCtHndrgqCKD3+ahmx9Xbb/TGgngDzePyaqYEdROlvaG5Sj2nfE3X75F+d/H0QU66XWolhIdHgPD+ImQVTVkAIn50iAMnGMD4t6abh8BlMsNHmp+AASvsWmg7M9pbe8yGGmG3qhJhXIAw9UgSTeeXEHPAzESsR+cMJTjCOc0K+BblWFcEeDtIoZcskvduSwL0aHcEHwjZw4z+ex7uaKnFY8hh7Nay7f5txaUiGp9p1SnhiY7FWEsqvnzJ/DA37jQHDjtkTOd+fDhIqSoYjLzmldZNBns0K+Bcblur2spL8f2cdb1VjeIroJg4hy+tbAiW0yOHm0mqbMkZCjCrkB2gJWCJCGv9ndUVsDYyqwDgB4qfCU4L/u01mmPHPO8EoOHqZR0="
+  on:
+    tags: true
