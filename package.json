@@ -1,5 +1,5 @@
 {
-  "name": "avails",
+  "name": "@pivotshare/avails",
   "version": "0.1.0",
   "description": "Tool for parsing and generating EMA Avails",
   "main": "./lib/avails.js",
