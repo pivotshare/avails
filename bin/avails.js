@@ -9,4 +9,5 @@ program
   .description(packageJson.description)
   .command('convert', 'convert Avails between various formats')
   .command('merge', 'merge historical Avails into one')
+  .command('diff', 'diff two avails to create a new one')
   .parse(process.argv);
