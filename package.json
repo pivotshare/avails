@@ -30,5 +30,13 @@
   "devDependencies": {
     "blue-tape": "^0.2.0",
     "tape": "^4.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/pivotshare/avails/issues"
+  },
+  "homepage": "https://github.com/pivotshare/avails#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pivotshare/avails.git"
   }
 }
