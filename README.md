@@ -1,5 +1,5 @@
-avails -- tools for parsing and generating EMA Avails
-=====================================================
+avails -- tool for manipulating EMA Avails
+==========================================
 
 ## SYNOPSES
 
@@ -20,22 +20,22 @@ avails -- tools for parsing and generating EMA Avails
 The following options are available:
 
   * `-i`, `--input` _<type>_:
-    Specify the format of input file: tsv, json, xlsx. Required. See [FORMATS]().
+    Specify the format of input file: tsv, json, xlsx. Required. See [FORMATS](#formats).
 
   * `-o`, `--output` _<type>_:
-    Specify the format of output file: tsv, json, xlsx. Required. See [FORMATS]().
+    Specify the format of output file: tsv, json, xlsx. Required. See [FORMATS](#formats).
 
   * `-h`:
     Display help `avails` or subcommands.
 
-See [BACKGROUND]() for more information regarding the Avails standard and this tool.
+See [BACKGROUND](#background) for more information regarding the Avails standard and this tool.
 
 ## FORMATS
 
 `avails` conforms to [EMA Avails](http://www.movielabs.com/md/avails/) spreadsheet template Version 1.6e2.
 
 `avails` supports the following formats:
-- Tab-serparated values (tsv)
+- Tab-separated values (tsv)
 - Microsoft Excel (xlsx)
 - JSON (json)
 
@@ -53,22 +53,21 @@ _avails_ document the transition between states, e.g. _Full Extract_, _Full Dele
 
 It is recommended to persist submitted avails and use `avails`, together with custom or third-party tools, to easily create new avails, or determine state of content on third-party platforms.
 
-## EXAMPLES
+## INSTALLATION
 
-You can use Avails as a CLI or a library.
-
-as library:
-```
-const Avails = require('@pivotshare/avails'); // npm install avails
-const obj = Avails.fromTSVLine('SomeFilmStudio\tEN\tUS\tMovie'); // etc
-// { display_name: 'SomeFilmStudio', store_language: 'EN', territory : 'US', work_type: 'Movie', ... }
-```
+You can use `avails` as a CLI or a Node.JS module.
 
 as CLI:
+```sh
+npm install -g avails
+avails convert -i json -o xlsx <movies.json >movies.xlsx
 ```
-# npm install -g avails
-# avails --help
-avails convert -i json -o xlsx <movies.json > movies.xlsx
+
+as module:
+```js
+// npm install avails
+const Avails = require('@pivotshare/avails');
+const obj = Avails.fromTSVLine('SomeFilmStudio\tEN\tUS\tMovie');
 ```
 
 ## SEE ALSO
