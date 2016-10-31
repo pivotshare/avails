@@ -8,6 +8,8 @@ avails -- tool for manipulating EMA Avails
   `avails merge` [-i type] [-o type] file1 [file2 ...]
 
   `avails diff` [-i type] [-o type] file1 file2
+  
+  `avails ids` [-i type] [-o type]
 
 ## DESCRIPTION
 
@@ -16,6 +18,8 @@ avails -- tool for manipulating EMA Avails
 `avails merge` will accept one of more avails in chronological order and merge them into a single avails. Merge will treat avails as state so repeated entities with the same _Entry Types_ will be ignored. A _Full Extract_ followed by a _Full Delete_ will result in no entry for that entity.
 
 `avails diff` will accept two avails, A and B, and return a new avails containing entries unique to B, without entries that exist in both A and B, and with entries that are only in A as _Full Delete_ entries.
+
+`avails ids` accepts avails and outputs a list of Alt IDs found.
 
 The following options are available:
 
